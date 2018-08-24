@@ -37,6 +37,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.google.android.exoplayer2.C;
@@ -81,6 +82,7 @@ import org.horaapps.leafpic.R;
 import org.horaapps.leafpic.activities.base.BaseActivity;
 import org.horaapps.leafpic.util.Measure;
 import org.horaapps.leafpic.util.StringUtils;
+import org.horaapps.leafpic.util.preferences.Prefs;
 import org.horaapps.leafpic.views.videoplayer.CustomExoPlayerView;
 import org.horaapps.leafpic.views.videoplayer.CustomPlayBackController;
 import org.horaapps.leafpic.views.videoplayer.TrackSelectionHelper;
@@ -138,11 +140,9 @@ public class PlayerActivity extends BaseActivity implements CustomPlayBackContro
         if (CookieHandler.getDefault() != DEFAULT_COOKIE_MANAGER) {
             CookieHandler.setDefault(DEFAULT_COOKIE_MANAGER);
         }
-
         setContentView(R.layout.activity_player);
         initUi();
         rootView = findViewById(R.id.root);
-
         simpleExoPlayerView = findViewById(R.id.player_view);
         simpleExoPlayerView.setControllerVisibilityListener(this);
         simpleExoPlayerView.requestFocus();
@@ -255,7 +255,11 @@ public class PlayerActivity extends BaseActivity implements CustomPlayBackContro
             player.addListener(new PlayerEventListener());
             simpleExoPlayerView.setPlayer(player);
             player.setPlayWhenReady(shouldAutoPlay);
-
+            if (Prefs.getLoopVideo()) {
+                player.setRepeatMode(Player.REPEAT_MODE_ALL);
+            } else {
+                player.setRepeatMode(Player.REPEAT_MODE_OFF);
+            }
         }
 
         String action = intent.getAction();
@@ -443,6 +447,9 @@ public class PlayerActivity extends BaseActivity implements CustomPlayBackContro
 
         }
 
+        MenuItem repeat = menu.findItem(R.id.loop_video);
+        repeat.setChecked(Prefs.getLoopVideo());
+
         return true;
     }
 
@@ -496,6 +503,18 @@ public class PlayerActivity extends BaseActivity implements CustomPlayBackContro
                     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
                 }
                 return true;
+            case R.id.loop_video:
+                if(item.isChecked()) {
+                    item.setChecked(false);
+                    Prefs.setLoopVideo(false);
+                    player.setRepeatMode(Player.REPEAT_MODE_OFF);
+                } else {
+                    item.setChecked(true);
+                    Prefs.setLoopVideo(true);
+                    player.setRepeatMode(Player.REPEAT_MODE_ALL);
+                }
+                return true;
+
 
             default:
                 return super.onOptionsItemSelected(item);

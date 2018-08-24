@@ -234,6 +234,14 @@ public class Prefs {
         return getPrefs().get(key, defaultValue);
     }
 
+    public static boolean getLoopVideo() {
+        return getPrefs().get(Keys.LOOP_VIDEO, Defaults.LOOP_VIDEO);
+    }
+
+    public static void setLoopVideo(boolean value) {
+        getPrefs().put(Keys.LOOP_VIDEO, value);
+    }
+
     // ***** Remove these methods when SettingWithSwitchView is refactored.
 
     @NonNull

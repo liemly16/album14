@@ -337,6 +337,7 @@
     <string name="text">Text</string>
     <string name="retry">Retry</string>
     <string name="off">Off</string>
+    <string name="loop_video">Loop video</string>
 
     <!--ERRORS-->
     <string name="error_drm_not_supported">Protected content is supported on Android 4.3 and later</string>
@@ -416,5 +417,8 @@
     <string name="timeline_grouping_menu_week">Week</string>
     <string name="timeline_grouping_menu_month">Month</string>
     <string name="timeline_grouping_menu_year">Year</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
