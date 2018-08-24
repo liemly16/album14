@@ -37,7 +37,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
-import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.google.android.exoplayer2.C;
@@ -234,7 +233,6 @@ public class PlayerActivity extends BaseActivity implements CustomPlayBackContro
                 String[] keyRequestPropertiesArray = intent.getStringArrayExtra(DRM_KEY_REQUEST_PROPERTIES);
                 boolean multiSession = intent.getBooleanExtra(DRM_MULTI_SESSION, false);
                 int errorStringId = R.string.error_drm_unknown;
-
                 try {
                     drmSessionManager = buildDrmSessionManagerV18(drmSchemeUuid, drmLicenseUrl,
                             keyRequestPropertiesArray, multiSession);
@@ -247,10 +245,8 @@ public class PlayerActivity extends BaseActivity implements CustomPlayBackContro
                     return;
                 }
             }
-
             DefaultRenderersFactory renderersFactory = new DefaultRenderersFactory(this,
                     drmSessionManager, DefaultRenderersFactory.EXTENSION_RENDERER_MODE_PREFER);
-
             player = ExoPlayerFactory.newSimpleInstance(renderersFactory, trackSelector);
             player.addListener(new PlayerEventListener());
             simpleExoPlayerView.setPlayer(player);
