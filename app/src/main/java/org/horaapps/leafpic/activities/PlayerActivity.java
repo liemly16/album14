@@ -442,10 +442,8 @@ public class PlayerActivity extends BaseActivity implements CustomPlayBackContro
             }
 
         }
-
-        MenuItem repeat = menu.findItem(R.id.loop_video);
-        repeat.setChecked(Prefs.getLoopVideo());
-
+        MenuItem loop = menu.findItem(R.id.loop_video);
+        loop.setChecked(Prefs.getLoopVideo());
         return true;
     }
 
