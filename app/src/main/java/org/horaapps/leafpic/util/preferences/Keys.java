@@ -28,6 +28,7 @@ public final class Keys {
 
     public static final String ANIMATIONS_DISABLED = "disable_animations";
     public static final String FORCE_ENGLISH = "force_english_locale";
+    public static final String LOOP_VIDEO = "loop_video";
 
     // Feature flags
     public static final String TIMELINE_ENABLED = "enable_timeline";
