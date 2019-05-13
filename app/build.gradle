@@ -16,7 +16,7 @@ android {
         applicationId "org.horaapps.leafpic"
         minSdkVersion 19
         targetSdkVersion project.sdkVersion
-        versionName "v0.7-alpha-2"
+        versionName "v1.0.0"
         versionCode 16
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
@@ -50,13 +50,13 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            resValue "string", "app_name", "LeafPic"
+            resValue "string", "app_name", "Album 14"
             signingConfig signingConfigs.release
         }
 
         debug {
             applicationIdSuffix ".debug"
-            resValue "string", "app_name", "LeafPic (debug)"
+            resValue "string", "app_name", "Album 14"
         }
     }
 
