@@ -56,9 +56,9 @@ public class NavigationDrawer extends ScrollView implements Themed {
     @BindView(R.id.navigation_item_all_media) NavigationEntry mediaEntry;
     @BindView(R.id.navigation_item_timeline) NavigationEntry timelineEntry;
     @BindView(R.id.navigation_item_hidden_albums) NavigationEntry hiddenFoldersEntry;
-    @BindView(R.id.navigation_item_wallpapers) NavigationEntry wallpapersEntry;
-    @BindView(R.id.navigation_item_donate) NavigationEntry donateEntry;
-    @BindView(R.id.navigation_item_settings) NavigationEntry settingsEntry;
+//    @BindView(R.id.navigation_item_wallpapers) NavigationEntry wallpapersEntry;
+//    @BindView(R.id.navigation_item_donate) NavigationEntry donateEntry;
+//    @BindView(R.id.navigation_item_settings) NavigationEntry settingsEntry;
     @BindView(R.id.navigation_item_affix) NavigationEntry affixEntry;
     @BindView(R.id.navigation_item_about) NavigationEntry aboutEntry;
     @BindView(R.id.navigation_drawer_header_version) TextView appVersion;
@@ -143,8 +143,7 @@ public class NavigationDrawer extends ScrollView implements Themed {
         ButterKnife.bind(this);
 
         navigationEntries = new NavigationEntry[]
-                {albumsEntry, mediaEntry, hiddenFoldersEntry, wallpapersEntry, donateEntry,
-                        settingsEntry, affixEntry, aboutEntry, timelineEntry};
+                {albumsEntry, mediaEntry, hiddenFoldersEntry, affixEntry, aboutEntry, timelineEntry};
         setupListeners();
 
         selectedEntry = albumsEntry;
@@ -184,12 +183,12 @@ public class NavigationDrawer extends ScrollView implements Themed {
                 return NAVIGATION_ITEM_TIMELINE;
             case R.id.navigation_item_hidden_albums:
                 return NAVIGATION_ITEM_HIDDEN_FOLDERS;
-            case R.id.navigation_item_wallpapers:
-                return NAVIGATION_ITEM_WALLPAPERS;
-            case R.id.navigation_item_donate:
-                return NAVIGATION_ITEM_DONATE;
-            case R.id.navigation_item_settings:
-                return NAVIGATION_ITEM_SETTINGS;
+//            case R.id.navigation_item_wallpapers:
+//                return NAVIGATION_ITEM_WALLPAPERS;
+//            case R.id.navigation_item_donate:
+//                return NAVIGATION_ITEM_DONATE;
+//            case R.id.navigation_item_settings:
+//                return NAVIGATION_ITEM_SETTINGS;
             case R.id.navigation_item_affix:
                 return NAVIGATION_ITEM_AFFIX;
             case R.id.navigation_item_about:
@@ -207,14 +206,16 @@ public class NavigationDrawer extends ScrollView implements Themed {
                 return albumsEntry;
             case NAVIGATION_ITEM_ALL_MEDIA:
                 return mediaEntry;
-            case NAVIGATION_ITEM_DONATE:
-                return donateEntry;
+//            case NAVIGATION_ITEM_DONATE:
+//                return donateEntry;
             case NAVIGATION_ITEM_HIDDEN_FOLDERS:
                 return hiddenFoldersEntry;
-            case NAVIGATION_ITEM_SETTINGS:
-                return settingsEntry;
-            case NAVIGATION_ITEM_WALLPAPERS:
-                return wallpapersEntry;
+//            case NAVIGATION_ITEM_SETTINGS:
+//                return settingsEntry;
+//            case NAVIGATION_ITEM_WALLPAPERS:
+//                return wallpapersEntry;
+            case NAVIGATION_ITEM_AFFIX:
+                return affixEntry;
             case NAVIGATION_ITEM_TIMELINE:
                 return timelineEntry;
             default:

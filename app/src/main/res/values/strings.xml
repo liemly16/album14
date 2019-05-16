@@ -1,13 +1,12 @@
 <resources>
     <!--LEAFPIC STRINGS-->
     <!--<string name="app_name">LeafPic</string>-->
-    <string name="app_light_description">A colorful material gallery.</string>
-    <string name="team_name">HoraApps</string>
-    <string name="welcome_slide_title">Welcome To LeafPic!</string>
-    <string name="welcome_slide_sub">A Colorful Material Designed Gallery!</string>
+    <string name="app_light_description">Đồ án ứng dụng Album ản</string>
+    <string name="team_name">Team14</string>
+    <string name="welcome_slide_title">Chào mừng đến với ứng  Album14</string>
+    <string name="welcome_slide_sub">Development By Team14</string>
     <string name="made_with_love_by">Made with love by</string>
     <string name="Effects">Effects</string>
-
 
     <!--AUTHORS-->
     <string name="developer_donald_name" translatable="false">Donald Shtjefni</string>
@@ -23,74 +22,74 @@
     <string name="easter_egg_disable">Disabled Easter Egg: </string>
 
     <!--FINGERPRINT-->
-    <string name="fp_not_supported">Sorry, fingerprint authentication not supported.</string>
-    <string name="fp_not_configured">No fingerprint configured.</string>
+    <string name="fp_not_supported">Máy bạn hiện chưa hỗ trợ vân </string>
+    <string name="fp_not_configured">Vân tay chưa được cài </string>
     <string name="fp_not_enabled_sls">Secure lock screen not enabled.</string>
 
     <!--ACTIONS-->
-    <string name="sort">Sort</string>
-    <string name="camera">Camera</string>
+    <string name="sort">Sắp xếp</string>
+    <string name="camera">Máy ảnh</string>
 
-    <string name="cancel">Cancel</string>
-    <string name="delete">Delete</string>
-    <string name="hide">Hide</string>
-    <string name="unhide">Unhide</string>
-    <string name="ok_action">OK</string>
-    <string name="rename_photo_action">Rename photo</string>
-    <string name="drawer_open">Open navigation drawer</string>
-    <string name="drawer_close">Close navigation drawer</string>
-    <string name="refresh">Refresh</string>
-    <string name="sent_to_action">Send to</string>
-    <string name="show_full">Show full</string>
+    <string name="cancel">Huỷ</string>
+    <string name="delete">Xoá</string>
+    <string name="hide">Ẩn</string>
+    <string name="unhide">Hiện</string>
+    <string name="ok_action">Đồng ý</string>
+    <string name="rename_photo_action">Đổi tên</string>
+    <string name="drawer_open">Mở thanh điều hướng</string>
+    <string name="drawer_close">Đóng thanh điều hướng</string>
+    <string name="refresh">Tải lại</string>
+    <string name="sent_to_action">Gửi đến</string>
+    <string name="show_full">Hiển thị hoàn toàn</string>
 
-    <string name="filter_menu_title">Filter</string>
-    <string name="all">All</string>
+    <string name="filter_menu_title">Bộ lọc</string>
+    <string name="all">Tất</string>
     <string name="videos">Video</string>
-    <string name="images">Images</string>
-    <string name="gifs">Gifs</string>
+    <string name="images">Hình ảnh</string>
+    <string name="gifs">Ảnh gif</string>
 
-    <string name="sort_menu_title">Sort</string>
-    <string name="name">Name</string>
-    <string name="date">Date</string>
-    <string name="date_taken">Date Taken</string>
+    <string name="sort_menu_title">Sắp xếp</string>
+    <string name="name">Tên</string>
+    <string name="date">Ngày</string>
+    <string name="date_taken">Ngày chụp</string>
 
-    <string name="delete_error">Unable to delete this file</string>
-    <string name="rename_error">Unable to rename this file</string>
-    <string name="move_error">Unable to move this file</string>
-    <string name="copy_error">Unable to copy this file</string>
+    <string name="delete_error">Không thể xoá tệp </string>
+    <string name="rename_error">Không thể đổi tên tệp này</string>
+    <string name="move_error">Không thể di chuyển tệp </string>
+    <string name="copy_error">Không thể sao chép tệp này</string>
 
 
-    <string name="size">Size</string>
+    <string name="size">Kích thước</string>
     <string name="numeric">As number</string>
-    <string name="ascending">Ascending</string>
+    <string name="ascending">Tăng dần</string>
 
-    <string name="select_all">Select All</string>
-    <string name="clear_selected">Clear Selected</string>
+    <string name="select_all">Chọn tất cả</string>
+    <string name="clear_selected">Bỏ chọn</string>
 
-    <string name="share">Share</string>
-    <string name="rotate">Rotate</string>
-    <string name="rotate_right_90">Rotate right 90°</string>
-    <string name="rotate_left_90">Rotate left 90°</string>
-    <string name="rotate_180">Rotate 180°</string>
-    <string name="copy_to">Copy to</string>
-    <string name="move_to">Move to</string>
-    <string name="use_as">Use as</string>
-    <string name="edit">Edit</string>
-    <string name="fix_date">Fix date</string>
-    <string name="rename">Rename</string>
-    <string name="rename_album">Rename album</string>
-    <string name="details">Details</string>
-    <string name="more">More</string>
-    <string name="print">Print</string>
-    <string name="show_more">Show More</string>
-    <string name="edit_with">Edit with</string>
-    <string name="open_with">Open with</string>
+    <string name="share">Chia sẻ</string>
+    <string name="rotate">Xoay</string>
+    <string name="rotate_right_90">Xoay phải 90°</string>
+    <string name="rotate_left_90">Xoay trái 90°</string>
+    <string name="rotate_180">Xoay 180°</string>
+    <string name="copy_to">Sao chép đến</string>
+    <string name="move_to">Di chuyển đến</string>
+    <string name="use_as">Sử dụng cho</string>
+    <string name="edit">Chỉnh sửa</string>
+    <string name="fix_date">Ngày sửa</string>
+    <string name="rename">Đổi tên</string>
+    <string name="rename_album">Đổi tên album</string>
+    <string name="details">Chi tiết</string>
+    <string name="more">Xem thêm</string>
+    <string name="print">In</string>
+    <string name="show_more">Hiển thị thêm</string>
+    <string name="edit_with">Chỉnh sửa với</string>
+    <string name="open_with">Mở với</string>
     <string name="upload">Upload</string>
     <string name="set_preview">Set as preview</string>
     <string name="clear_preview">Clear preview</string>
-    <string name="new_folder">New Folder</string>
-    <string name="create_new_folder">Create new folder</string>
-    <string name="view">View</string>
+    <string name="new_folder">Thư mục mới</string>
+    <string name="create_new_folder">Tạo thư mục mới</string>
+    <string name="view">Xem</string>
 
     <!--DIALOG MESSAGES-->
     <string name="hide_album_message">
