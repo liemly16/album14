@@ -59,7 +59,7 @@ public class NavigationDrawer extends ScrollView implements Themed {
 //    @BindView(R.id.navigation_item_wallpapers) NavigationEntry wallpapersEntry;
 //    @BindView(R.id.navigation_item_donate) NavigationEntry donateEntry;
 //    @BindView(R.id.navigation_item_settings) NavigationEntry settingsEntry;
-    @BindView(R.id.navigation_item_affix) NavigationEntry affixEntry;
+//    @BindView(R.id.navigation_item_affix) NavigationEntry affixEntry;
     @BindView(R.id.navigation_item_about) NavigationEntry aboutEntry;
     @BindView(R.id.navigation_drawer_header_version) TextView appVersion;
 
@@ -134,7 +134,7 @@ public class NavigationDrawer extends ScrollView implements Themed {
      * Called on parent onStart. Use for any kind of refresh activities.
      */
     public void refresh() {
-        timelineEntry.setVisibility(isDebug() && Prefs.timelineEnabled() ? VISIBLE : GONE);
+//        timelineEntry.setVisibility(isDebug() && Prefs.timelineEnabled() ? VISIBLE : GONE);
     }
 
     private void init(@NonNull Context context) {
@@ -143,7 +143,7 @@ public class NavigationDrawer extends ScrollView implements Themed {
         ButterKnife.bind(this);
 
         navigationEntries = new NavigationEntry[]
-                {albumsEntry, mediaEntry, hiddenFoldersEntry, affixEntry, aboutEntry, timelineEntry};
+                {albumsEntry, mediaEntry, hiddenFoldersEntry, aboutEntry, timelineEntry};
         setupListeners();
 
         selectedEntry = albumsEntry;
@@ -189,8 +189,8 @@ public class NavigationDrawer extends ScrollView implements Themed {
 //                return NAVIGATION_ITEM_DONATE;
 //            case R.id.navigation_item_settings:
 //                return NAVIGATION_ITEM_SETTINGS;
-            case R.id.navigation_item_affix:
-                return NAVIGATION_ITEM_AFFIX;
+//            case R.id.navigation_item_affix:
+//                return NAVIGATION_ITEM_AFFIX;
             case R.id.navigation_item_about:
                 return NAVIGATION_ITEM_ABOUT;
         }
@@ -214,8 +214,8 @@ public class NavigationDrawer extends ScrollView implements Themed {
 //                return settingsEntry;
 //            case NAVIGATION_ITEM_WALLPAPERS:
 //                return wallpapersEntry;
-            case NAVIGATION_ITEM_AFFIX:
-                return affixEntry;
+//            case NAVIGATION_ITEM_AFFIX:
+//                return affixEntry;
             case NAVIGATION_ITEM_TIMELINE:
                 return timelineEntry;
             default:
