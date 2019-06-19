@@ -58,14 +58,14 @@
                     android:id="@+id/size_sort_mode"
                     android:title="@string/size"
                     app:showAsAction="never" />
-                <item
-                    android:id="@+id/type_sort_action"
-                    android:title="@string/type"
-                    app:showAsAction="never" />
-                <item
-                    android:id="@+id/numeric_sort_mode"
-                    android:title="@string/numeric"
-                    app:showAsAction="never" />
+                <!--<item-->
+                    <!--android:id="@+id/type_sort_action"-->
+                    <!--android:title="@string/type"-->
+                    <!--app:showAsAction="never" />-->
+                <!--<item-->
+                    <!--android:id="@+id/numeric_sort_mode"-->
+                    <!--android:title="@string/numeric"-->
+                    <!--app:showAsAction="never" />-->
             </group>
             <group android:checkableBehavior="all">
                 <item
@@ -83,6 +83,7 @@
         <item
             android:id="@+id/action_copy"
             android:title="@string/copy_to"
+            android:visible="false"
             app:showAsAction="never" />
         <item
             android:id="@+id/action_move"
@@ -104,19 +105,22 @@
             android:id="@+id/hide"
             android:title="@string/hide"
             app:showAsAction="never" />
-        <item
-            android:id="@+id/exclude"
-            android:title="@string/exclude"
-            app:showAsAction="never" />
-        <item
-            android:id="@+id/pin_album"
-            android:title="@string/pin"
-            app:showAsAction="never" />
+        <!--<item-->
+            <!--android:id="@+id/exclude"-->
+            <!--android:title="@string/exclude"-->
+            <!--android:visible="false"-->
+            <!--app:showAsAction="never" />-->
+        <!--<item-->
+            <!--android:id="@+id/pin_album"-->
+            <!--android:title="@string/pin"-->
+            <!--android:visible="false"-->
+            <!--app:showAsAction="never" />-->
 
-        <item
-            android:id="@+id/shortcut"
-            android:title="@string/install_shortcut"
-            app:showAsAction="never" />
+        <!--<item-->
+            <!--android:id="@+id/shortcut"-->
+            <!--android:title="@string/install_shortcut"-->
+            <!--android:visible="false"-->
+            <!--/>-->
     </group>
     <item
         android:id="@+id/rename"
@@ -144,5 +148,6 @@
     <item
         android:id="@+id/settings"
         android:title="@string/settings"
+        android:visible="false"
         app:showAsAction="never" />
 </menu>

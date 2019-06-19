@@ -283,7 +283,7 @@ public class RvMediaFragment extends BaseMediaGridFragment {
                 case SIZE:  menu.findItem(R.id.size_sort_mode).setChecked(true); break;
                 case DATE: default:
                     menu.findItem(R.id.date_taken_sort_mode).setChecked(true); break;
-                case NUMERIC:  menu.findItem(R.id.numeric_sort_mode).setChecked(true); break;
+//                case NUMERIC:  menu.findItem(R.id.numeric_sort_mode).setChecked(true); break;
             }
         }
 
@@ -384,12 +384,12 @@ public class RvMediaFragment extends BaseMediaGridFragment {
                 item.setChecked(true);
                 return true;
 
-            case R.id.numeric_sort_mode:
-                adapter.changeSortingMode(SortingMode.NUMERIC);
-                HandlingAlbums.getInstance(getContext()).setSortingMode(album.getPath(), SortingMode.NUMERIC.getValue());
-                album.setSortingMode(SortingMode.NUMERIC);
-                item.setChecked(true);
-                return true;
+//            case R.id.numeric_sort_mode:
+//                adapter.changeSortingMode(SortingMode.NUMERIC);
+//                HandlingAlbums.getInstance(getContext()).setSortingMode(album.getPath(), SortingMode.NUMERIC.getValue());
+//                album.setSortingMode(SortingMode.NUMERIC);
+//                item.setChecked(true);
+//                return true;
 
             case R.id.ascending_sort_order:
                 item.setChecked(!item.isChecked());

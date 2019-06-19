@@ -92,6 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemIcon="@string/icon_settings"
+                android:visibility="invisible"
                 app:itemText="@string/settings" />
 
             <org.horaapps.leafpic.views.navigation_drawer.NavigationEntry
@@ -99,6 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemIcon="@string/icon_about"
+                android:visibility="invisible"
                 app:itemText="@string/about" />
 
         </LinearLayout>

@@ -176,7 +176,7 @@ public class AboutActivity extends BaseActivity implements ContactListener {
     private void initUi() {
         setSupportActionBar(toolbar);
         appVersion.setText(ApplicationUtils.getAppVersion());
-        linkChangelog.setDescription(ApplicationUtils.getAppVersion());
+//        linkChangelog.setDescription(ApplicationUtils.getAppVersion());
 
 
         ArrayList<Contributor> contributors = new ArrayList<>(1);

@@ -87,7 +87,7 @@ public class MainActivity extends SharedMediaActivity implements
         int MODE_TIMELINE = 1003;
     }
 
-    @BindView(R.id.fab_camera) FloatingActionButton fab;
+//    @BindView(R.id.fab_camera) FloatingActionButton fab;
     @BindView(R.id.drawer_layout) DrawerLayout navigationDrawer;
     @BindView(R.id.home_navigation_drawer) NavigationDrawer navigationDrawerView;
     @BindView(R.id.toolbar) Toolbar toolbar;
@@ -263,11 +263,11 @@ public class MainActivity extends SharedMediaActivity implements
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        if (DeviceUtils.isPortrait(getResources())) {
-            fab.setVisibility(View.VISIBLE);
-            fab.animate().translationY(fab.getHeight() * 2).start();
-        } else
-            fab.setVisibility(View.GONE);
+//        if (DeviceUtils.isPortrait(getResources())) {
+//            fab.setVisibility(View.VISIBLE);
+//            fab.animate().translationY(fab.getHeight() * 2).start();
+//        } else
+//            fab.setVisibility(View.GONE);
     }
 
     public void goBackToAlbums() {
@@ -308,8 +308,8 @@ public class MainActivity extends SharedMediaActivity implements
     }
 
     private void setupFAB() {
-        fab.setImageDrawable(new IconicsDrawable(getApplicationContext()).icon(GoogleMaterial.Icon.gmd_camera_alt).color(Color.WHITE));
-        fab.setOnClickListener(v -> startActivity(new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA)));
+//        fab.setImageDrawable(new IconicsDrawable(getApplicationContext()).icon(GoogleMaterial.Icon.gmd_camera_alt).color(Color.WHITE));
+//        fab.setOnClickListener(v -> startActivity(new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA)));
     }
 
     private void closeDrawer() {
@@ -367,8 +367,8 @@ public class MainActivity extends SharedMediaActivity implements
         setStatusBarColor();
         setNavBarColor();
 
-        fab.setBackgroundTintList(ColorStateList.valueOf(getAccentColor()));
-        fab.setVisibility(Hawk.get(getString(R.string.preference_show_fab), false) ? View.VISIBLE : View.GONE);
+//        fab.setBackgroundTintList(ColorStateList.valueOf(getAccentColor()));
+//        fab.setVisibility(Hawk.get(getString(R.string.preference_show_fab), false) ? View.VISIBLE : View.GONE);
         mainLayout.setBackgroundColor(getBackgroundColor());
 
 //        setScrollViewColor(navigationDrawerView);

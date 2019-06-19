@@ -77,6 +77,7 @@
             android:id="@+id/timeline_share"
             android:icon="@drawable/ic_share"
             android:title="@string/share"
+            android:visible="false"
             app:showAsAction="ifRoom" />
 
         <item

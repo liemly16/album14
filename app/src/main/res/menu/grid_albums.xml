@@ -34,6 +34,7 @@
                     <item
                         android:id="@+id/numeric_sort_mode"
                         android:title="@string/numeric"
+                        android:visible="false"
                         app:showAsAction="never" />
                 </group>
                 <group android:checkableBehavior="all">
@@ -51,24 +52,27 @@
             android:id="@+id/delete"
             android:title="@string/delete"
             app:showAsAction="ifRoom" />
-        <item
-            android:id="@+id/exclude"
-            android:title="@string/exclude"
-            app:showAsAction="never" />
-        <item
-            android:id="@+id/shortcut"
-            android:title="@string/install_shortcut"
-            app:showAsAction="never" />
+        <!--<item-->
+            <!--android:id="@+id/exclude"-->
+            <!--android:title="@string/exclude"-->
+            <!--android:visible="false"-->
+            <!--app:showAsAction="never" />-->
+        <!--<item-->
+            <!--android:id="@+id/shortcut"-->
+            <!--android:title="@string/install_shortcut"-->
+            <!--android:visible="false"-->
+          <!--/>-->
         <item
             android:id="@+id/hide"
             android:title="@string/hide"
             app:showAsAction="never" />
     </group>
     <group android:id="@+id/one_selected_items">
-        <item
-            android:id="@+id/pin_album"
-            android:title="@string/pin"
-            app:showAsAction="never" />
+        <!--<item-->
+            <!--android:id="@+id/pin_album"-->
+            <!--android:title="@string/pin"-->
+            <!--android:visible="false"-->
+            <!--app:showAsAction="never" />-->
         <item
             android:id="@+id/rename"
             android:title="@string/rename"
@@ -86,5 +90,6 @@
     <item
         android:id="@+id/settings"
         android:title="@string/settings"
+        android:visible="false"
         app:showAsAction="never" />
 </menu>

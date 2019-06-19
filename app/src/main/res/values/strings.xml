@@ -22,9 +22,9 @@
     <string name="easter_egg_disable">Disabled Easter Egg: </string>
 
     <!--FINGERPRINT-->
-    <string name="fp_not_supported">Máy bạn hiện chưa hỗ trợ vân </string>
-    <string name="fp_not_configured">Vân tay chưa được cài </string>
-    <string name="fp_not_enabled_sls">Secure lock screen not enabled.</string>
+    <string name="fp_not_supported">Máy bạn hiện chưa hỗ trợ vân tay</string>
+    <string name="fp_not_configured">Vân tay chưa được cài đặt</string>
+    <string name="fp_not_enabled_sls">Khoá màn hình chưa được cài đặt</string>
 
     <!--ACTIONS-->
     <string name="sort">Sắp xếp</string>
@@ -43,10 +43,10 @@
     <string name="show_full">Hiển thị hoàn toàn</string>
 
     <string name="filter_menu_title">Bộ lọc</string>
-    <string name="all">Tất</string>
+    <string name="all">Tất cả</string>
     <string name="videos">Video</string>
     <string name="images">Hình ảnh</string>
-    <string name="gifs">Ảnh gif</string>
+    <string name="gifs">Ảnh động</string>
 
     <string name="sort_menu_title">Sắp xếp</string>
     <string name="name">Tên</string>
@@ -60,7 +60,7 @@
 
 
     <string name="size">Kích thước</string>
-    <string name="numeric">As number</string>
+    <string name="numeric">Theo số</string>
     <string name="ascending">Tăng dần</string>
 
     <string name="select_all">Chọn tất cả</string>
@@ -110,14 +110,14 @@
     <string name="album_path">Album Path</string>
 
     <!--ITEMS-->
-    <string name="singular_photo">Photo</string>
+    <string name="singular_photo"></string>
     <string name="plural_photos">Photos</string>
     <string name="video_player">Video Player</string>
     <string name="media">Media</string>
     <string name="send_to">Send to</string>
     <string name="search_menu">Search</string>
     <string name="full_resolution">Full resolution</string>
-    <string name="of">%1$d of %2$d</string>
+    <string name="of">%1$d trong %2$d</string>
 
     <!--PALETTE-->
     <string name="palette">Palette</string>
@@ -141,13 +141,13 @@
 
     <!--RANDOM-->
     <string name="album">Album</string>
-    <string name="done">Done!</string>
-    <string name="there_is_nothing_to_show">There\'s nothing to show</string>
-    <string name="insert_a_name">Insert something</string>
-    <string name="nothing_changed">Nothing changed</string>
-    <string name="install_shortcut">Install shortcut</string>
-    <string name="landscape">Landscape</string>
-    <string name="portrait">Portrait</string>
+    <string name="done">Đã xong!</string>
+    <string name="there_is_nothing_to_show">Hiện chưa có thông tin gì để hiển thị</string>
+    <string name="insert_a_name">Chèn thêm</string>
+    <string name="nothing_changed">Không có gì thay đổi</string>
+    <string name="install_shortcut">Cài đặt </string>
+    <string name="landscape">Phong cảnh</string>
+    <string name="portrait">Chân dung</string>
     <string name="print_error">Unable to print the picture</string>
 
     <!--SETTINGS PREFERENCES-->
@@ -319,23 +319,23 @@
     <string name="location">Location</string>
 
     <!--DRAWER ITEMS-->
-    <string name="local_folder">Local Folders</string>
-    <string name="all_media">All Media</string>
-    <string name="hidden_folder">Hidden Folders</string>
-    <string name="tags">Tags</string>
+    <string name="local_folder">Thư mục</string>
+    <string name="all_media">Tất cả</string>
+    <string name="hidden_folder">Thư mục ẩn</string>
+    <string name="tags">Thẻ</string>
     <string name="timeline">Timeline</string>
-    <string name="wallpapers">Wallpapers</string>
+    <string name="wallpapers">Hình nền</string>
     <string name="donate">Donate</string>
     <string name="github" translatable="false">GitHub</string>
 
     <!--VIDEO PLAYER-->
-    <string name="enable_background_audio">Play in background</string>
-    <string name="video">Video</string>
+    <string name="enable_background_audio">Chạy nền</string>
+    <string name="video"></string>
     <string name="audio">Audio</string>
     <string name="subtitles">Subtitles</string>
     <string name="text">Text</string>
     <string name="retry">Retry</string>
-    <string name="off">Off</string>
+    <string name="off">Off</string>Video
     <string name="loop_video">Loop video</string>
 
     <!--ERRORS-->
@@ -411,11 +411,11 @@
 
     <!-- Timeline -->
     <string name="timeline_toolbar_title">Timeline</string>
-    <string name="timeline_grouping_menu_label">Grouping</string>
-    <string name="timeline_grouping_menu_day">Day</string>
-    <string name="timeline_grouping_menu_week">Week</string>
-    <string name="timeline_grouping_menu_month">Month</string>
-    <string name="timeline_grouping_menu_year">Year</string>
+    <string name="timeline_grouping_menu_label">Nhóm theo</string>
+    <string name="timeline_grouping_menu_day">Ngày</string>
+    <string name="timeline_grouping_menu_week">Tuần</string>
+    <string name="timeline_grouping_menu_month">Tháng</string>
+    <string name="timeline_grouping_menu_year">Năm</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

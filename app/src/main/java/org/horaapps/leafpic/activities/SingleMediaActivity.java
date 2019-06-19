@@ -440,6 +440,8 @@ public class SingleMediaActivity extends SharedMediaActivity implements BaseMedi
                             }
                             //adapter.notifyDataSetChanged();
                         } catch (Exception e) {
+                            Toast.makeText(this, "co loi xay ra", Toast.LENGTH_SHORT).show();
+
                             Log.e("ERROS - uCrop", imageUri.toString(), e);
                         }
                     } else
@@ -540,13 +542,13 @@ public class SingleMediaActivity extends SharedMediaActivity implements BaseMedi
                 uCrop.start(SingleMediaActivity.this);
                 break;
 
-            case R.id.action_use_as:
-                Intent intent = new Intent(Intent.ACTION_ATTACH_DATA);
-                intent.setDataAndType(LegacyCompatFileProvider.getUri(this,
-                        getCurrentMedia().getFile()), getCurrentMedia().getMimeType());
-                intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                startActivity(Intent.createChooser(intent, getString(R.string.use_as)));
-                return true;
+//            case R.id.action_use_as:
+//                Intent intent = new Intent(Intent.ACTION_ATTACH_DATA);
+//                intent.setDataAndType(LegacyCompatFileProvider.getUri(this,
+//                        getCurrentMedia().getFile()), getCurrentMedia().getMimeType());
+//                intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+//                startActivity(Intent.createChooser(intent, getString(R.string.use_as)));
+//                return true;
 
             case R.id.action_open_with:
                 Intent intentopenWith = new Intent(Intent.ACTION_VIEW);
@@ -672,17 +674,17 @@ public class SingleMediaActivity extends SharedMediaActivity implements BaseMedi
                 startActivity(paletteIntent);
                 break;
 
-            case R.id.action_print:
-                PrintHelper photoPrinter = new PrintHelper(this);
-                photoPrinter.setScaleMode(PrintHelper.SCALE_MODE_FIT);
-                try (InputStream in = getContentResolver().openInputStream(getCurrentMedia().getUri())) {
-                    Bitmap bitmap = BitmapFactory.decodeStream(in);
-                    photoPrinter.printBitmap(String.format("print_%s", getCurrentMedia().getDisplayPath() ), bitmap);
-                } catch (Exception e) {
-                    Log.e("print", String.format("unable to print %s", getCurrentMedia().getUri()), e);
-                    Toast.makeText(getApplicationContext(), R.string.print_error, Toast.LENGTH_SHORT).show();
-                }
-                break;
+//            case R.id.action_print:
+//                PrintHelper photoPrinter = new PrintHelper(this);
+//                photoPrinter.setScaleMode(PrintHelper.SCALE_MODE_FIT);
+//                try (InputStream in = getContentResolver().openInputStream(getCurrentMedia().getUri())) {
+//                    Bitmap bitmap = BitmapFactory.decodeStream(in);
+//                    photoPrinter.printBitmap(String.format("print_%s", getCurrentMedia().getDisplayPath() ), bitmap);
+//                } catch (Exception e) {
+//                    Log.e("print", String.format("unable to print %s", getCurrentMedia().getUri()), e);
+//                    Toast.makeText(getApplicationContext(), R.string.print_error, Toast.LENGTH_SHORT).show();
+//                }
+//                break;
 
             case R.id.slide_show:
                 isSlideShowOn = !isSlideShowOn;

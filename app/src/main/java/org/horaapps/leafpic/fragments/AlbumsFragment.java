@@ -245,13 +245,13 @@ public class AlbumsFragment extends BaseMediaGridFragment {
                 case SIZE:  menu.findItem(R.id.size_sort_mode).setChecked(true); break;
                 case DATE: default:
                     menu.findItem(R.id.date_taken_sort_mode).setChecked(true); break;
-                case NUMERIC:  menu.findItem(R.id.numeric_sort_mode).setChecked(true); break;
+//                case NUMERIC:  menu.findItem(R.id.numeric_sort_mode).setChecked(true); break;
             }
         }
 
         if (oneSelected) {
             Album selectedAlbum = adapter.getFirstSelectedAlbum();
-            menu.findItem(R.id.pin_album).setTitle(selectedAlbum.isPinned() ? getString(R.string.un_pin) : getString(R.string.pin));
+//            menu.findItem(R.id.pin_album).setTitle(selectedAlbum.isPinned() ? getString(R.string.un_pin) : getString(R.string.pin));
             menu.findItem(R.id.clear_album_cover).setVisible(selectedAlbum.hasCover());
         }
 
@@ -269,15 +269,15 @@ public class AlbumsFragment extends BaseMediaGridFragment {
                     adapter.clearSelected();
                 else adapter.selectAll();
                 return true;
-
-            case R.id.pin_album:
-                if (selectedAlbum != null) {
-                    boolean b = selectedAlbum.togglePinAlbum();
-                    db().setPined(selectedAlbum.getPath(), b);
-                    adapter.clearSelected();
-                    adapter.sort();
-                }
-                return true;
+//
+//            case R.id.pin_album:
+//                if (selectedAlbum != null) {
+//                    boolean b = selectedAlbum.togglePinAlbum();
+//                    db().setPined(selectedAlbum.getPath(), b);
+//                    adapter.clearSelected();
+//                    adapter.sort();
+//                }
+//                return true;
 
             case R.id.clear_album_cover:
                 if (selectedAlbum != null) {
@@ -349,11 +349,11 @@ public class AlbumsFragment extends BaseMediaGridFragment {
                 item.setChecked(true);
                 return true;
 
-            case R.id.numeric_sort_mode:
-                adapter.changeSortingMode(SortingMode.NUMERIC);
-                AlbumsHelper.setSortingMode(SortingMode.NUMERIC);
-                item.setChecked(true);
-                return true;
+//            case R.id.numeric_sort_mode:
+//                adapter.changeSortingMode(SortingMode.NUMERIC);
+//                AlbumsHelper.setSortingMode(SortingMode.NUMERIC);
+//                item.setChecked(true);
+//                return true;
 
             case R.id.ascending_sort_order:
                 item.setChecked(!item.isChecked());
@@ -362,52 +362,52 @@ public class AlbumsFragment extends BaseMediaGridFragment {
                 AlbumsHelper.setSortingOrder(sortingOrder);
                 return true;
 
-            case R.id.exclude:
-                final AlertDialog.Builder excludeDialogBuilder = new AlertDialog.Builder(getActivity(), getDialogStyle());
-
-                final View excludeDialogLayout = LayoutInflater.from(getContext()).inflate(R.layout.dialog_exclude, null);
-                TextView textViewExcludeTitle = excludeDialogLayout.findViewById(R.id.text_dialog_title);
-                TextView textViewExcludeMessage = excludeDialogLayout.findViewById(R.id.text_dialog_message);
-                final Spinner spinnerParents = excludeDialogLayout.findViewById(R.id.parents_folder);
-
-                spinnerParents.getBackground().setColorFilter(getIconColor(), PorterDuff.Mode.SRC_ATOP);
-
-                ((CardView) excludeDialogLayout.findViewById(R.id.message_card)).setCardBackgroundColor(getCardBackgroundColor());
-                textViewExcludeTitle.setBackgroundColor(getPrimaryColor());
-                textViewExcludeTitle.setText(getString(R.string.exclude));
-
-                if(adapter.getSelectedCount() > 1) {
-                    textViewExcludeMessage.setText(R.string.exclude_albums_message);
-                    spinnerParents.setVisibility(View.GONE);
-                } else {
-                    textViewExcludeMessage.setText(R.string.exclude_album_message);
-                    spinnerParents.setAdapter(getThemeHelper().getSpinnerAdapter(adapter.getFirstSelectedAlbum().getParentsFolders()));
-                }
-
-                textViewExcludeMessage.setTextColor(getTextColor());
-                excludeDialogBuilder.setView(excludeDialogLayout);
-
-                excludeDialogBuilder.setPositiveButton(this.getString(R.string.exclude).toUpperCase(), (dialog, id) -> {
-
-                    if (adapter.getSelectedCount() > 1) {
-                        for (Album album : adapter.getSelectedAlbums()) {
-                            db().excludeAlbum(album.getPath());
-                            excuded.add(album.getPath());
-                        }
-                        adapter.removeSelectedAlbums();
-
-                    } else {
-                        String path = spinnerParents.getSelectedItem().toString();
-                        db().excludeAlbum(path);
-                        excuded.add(path);
-                        adapter.removeAlbumsThatStartsWith(path);
-                        adapter.forceSelectedCount(0);
-                    }
-                    updateToolbar();
-                });
-                excludeDialogBuilder.setNegativeButton(this.getString(R.string.cancel).toUpperCase(), null);
-                excludeDialogBuilder.show();
-                return true;
+//            case R.id.exclude:
+//                final AlertDialog.Builder excludeDialogBuilder = new AlertDialog.Builder(getActivity(), getDialogStyle());
+//
+//                final View excludeDialogLayout = LayoutInflater.from(getContext()).inflate(R.layout.dialog_exclude, null);
+//                TextView textViewExcludeTitle = excludeDialogLayout.findViewById(R.id.text_dialog_title);
+//                TextView textViewExcludeMessage = excludeDialogLayout.findViewById(R.id.text_dialog_message);
+//                final Spinner spinnerParents = excludeDialogLayout.findViewById(R.id.parents_folder);
+//
+//                spinnerParents.getBackground().setColorFilter(getIconColor(), PorterDuff.Mode.SRC_ATOP);
+//
+//                ((CardView) excludeDialogLayout.findViewById(R.id.message_card)).setCardBackgroundColor(getCardBackgroundColor());
+//                textViewExcludeTitle.setBackgroundColor(getPrimaryColor());
+//                textViewExcludeTitle.setText(getString(R.string.exclude));
+//
+//                if(adapter.getSelectedCount() > 1) {
+//                    textViewExcludeMessage.setText(R.string.exclude_albums_message);
+//                    spinnerParents.setVisibility(View.GONE);
+//                } else {
+//                    textViewExcludeMessage.setText(R.string.exclude_album_message);
+//                    spinnerParents.setAdapter(getThemeHelper().getSpinnerAdapter(adapter.getFirstSelectedAlbum().getParentsFolders()));
+//                }
+//
+//                textViewExcludeMessage.setTextColor(getTextColor());
+//                excludeDialogBuilder.setView(excludeDialogLayout);
+//
+//                excludeDialogBuilder.setPositiveButton(this.getString(R.string.exclude).toUpperCase(), (dialog, id) -> {
+//
+//                    if (adapter.getSelectedCount() > 1) {
+//                        for (Album album : adapter.getSelectedAlbums()) {
+//                            db().excludeAlbum(album.getPath());
+//                            excuded.add(album.getPath());
+//                        }
+//                        adapter.removeSelectedAlbums();
+//
+//                    } else {
+//                        String path = spinnerParents.getSelectedItem().toString();
+//                        db().excludeAlbum(path);
+//                        excuded.add(path);
+//                        adapter.removeAlbumsThatStartsWith(path);
+//                        adapter.forceSelectedCount(0);
+//                    }
+//                    updateToolbar();
+//                });
+//                excludeDialogBuilder.setNegativeButton(this.getString(R.string.cancel).toUpperCase(), null);
+//                excludeDialogBuilder.show();
+//                return true;
 
             case R.id.delete:
 
