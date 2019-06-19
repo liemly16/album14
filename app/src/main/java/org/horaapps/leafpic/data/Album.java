@@ -92,6 +92,12 @@ public class Album implements CursorHandler, Parcelable {
 		return album;
 	}
 
+	public static Album getOneMediaAlbum() {
+		Album album = new Album(" Media", 8000);
+		album.settings = AlbumSettings.getDefaults();
+		return album;
+	}
+
 	static Album withPath(String path) {
 		Album emptyAlbum = getEmptyAlbum();
 		emptyAlbum.path = path;

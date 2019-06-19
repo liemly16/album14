@@ -19,11 +19,15 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.support.v7.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -435,102 +439,36 @@ public class MainActivity extends SharedMediaActivity implements
                 SettingsActivity.startActivity(this);
                 return true;
 
-            /*
-            case R.id.action_move:
-                SelectAlbumBuilder.with(getSupportFragmentManager())
-                        .title(getString(R.string.move_to))
-                        .onFolderSelected(new SelectAlbumBuilder.OnFolderSelected() {
-                            @Override
-                            public void folderSelected(String path) {
-                                //TODo
-                                //swipeRefreshLayout.setRefreshing(true);
-                                /*if (getAlbum().moveSelectedMedia(getApplicationContext(), path) > 0) {
-                                    if (getAlbum().getMedia().size() == 0) {
-                                        //getAlbums().removeCurrentAlbum();
-                                        //albumsAdapter.notifyDataSetChanged();
-                                        displayAlbums(false);
-                                    }
-                                    //oldMediaAdapter.swapDataSet(getAlbum().getMedia());
-                                    //finishEditMode();
-                                    supportInvalidateOptionsMenu();
-                                } else requestSdCardPermissions();
-
-                                //swipeRefreshLayout.setRefreshing(false);
-                            }
-                        }).show();
-                return true;
-                */
-
-            /*
-            case R.id.action_copy:
-                SelectAlbumBuilder.with(getSupportFragmentManager())
-                        .title(getString(R.string.copy_to))
-                        .onFolderSelected(new SelectAlbumBuilder.OnFolderSelected() {
-                            @Override
-                            public void folderSelected(String path) {
-                                boolean success = getAlbum().copySelectedPhotos(getApplicationContext(), path);
-                                //finishEditMode();
-
-                                if (!success) // TODO: 11/21/16 handle in other way
-                                    requestSdCardPermissions();
-                            }
-                        }).show();
-
-                return true;
-
-                */
-
-
-            /*case R.id.rename:
-                final EditText editTextNewName = new EditText(getApplicationContext());
-                editTextNewName.setText(albumsMode ? firstSelectedAlbum.getName() : getAlbum().getName());
-
-                final AlertDialog insertTextDialog = AlertDialogsHelper.getInsertTextDialog(MainActivity.this, editTextNewName, R.string.rename_album);
-
-                insertTextDialog.setButton(DialogInterface.BUTTON_NEGATIVE, getString(R.string.cancel).toUpperCase(), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onMediaClick(DialogInterface dialogInterface, int i) {
-                        insertTextDialog.dismiss();
-                    }
-                });
-
-                insertTextDialog.setButton(DialogInterface.BUTTON_POSITIVE, getString(R.string.ok_action).toUpperCase(), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onMediaClick(DialogInterface dialogInterface, int i) {
-                        if (editTextNewName.length() != 0) {
-                            swipeRefreshLayout.setRefreshing(true);
-                            boolean success;
-                            if (albumsMode) {
-
-                                int index = getAlbums().albums.indexOf(firstSelectedAlbum);
-                                getAlbums().getAlbum(index).updatePhotos(getApplicationContext());
-                                success = getAlbums().getAlbum(index).renameAlbum(getApplicationContext(),
-                                        editTextNewName.getText().toString());
-                                albumsAdapter.notifyItemChanged(index);
-                            } else {
-                                success = getAlbum().renameAlbum(getApplicationContext(), editTextNewName.getText().toString());
-                                toolbar.setTitle(getAlbum().getName());
-                                oldMediaAdapter.notifyDataSetChanged();
-                            }
-                            insertTextDialog.dismiss();
-                            if (!success) requestSdCardPermissions();
-                            swipeRefreshLayout.setRefreshing(false);
-                        } else {
-                            StringUtils.showToast(getApplicationContext(), getString(R.string.insert_something));
-                            editTextNewName.requestFocus();
-                        }
-                    }
-                });
-
-                insertTextDialog.show();
-                return true;*/
-
-
             default:
                 /** If we got here, the user's action was not recognized.
                  *  Invoke the superclass to handle it. */
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    /** Search Action **/
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_albums, menu);
+        MenuItem searchViewItem = menu.findItem(R.id.search_action);
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchViewItem);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Toast.makeText(MainActivity.this, query, Toast.LENGTH_SHORT).show();
+                closeDrawer();
+                displayMedia(Album.getOneMediaAlbum());
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
